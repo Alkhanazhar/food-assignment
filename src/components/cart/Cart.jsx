@@ -1,9 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/Context";
 import "./Cart.css";
+import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const { cart, setCart, isCartOpen, setIsCartOpen } = useContext(CartContext);
   const [totalPrice, setTotalPrice] = useState(0);
+  const navigate = useNavigate();
+
   function addToCart(item) {
     setCart((prevCart) => {
       const existingItemIndex = prevCart.findIndex(
@@ -31,6 +34,10 @@ const Cart = () => {
         })
         .filter((cartItem) => cartItem.quantity > 0);
     });
+  }
+  function handleCheckOut() {
+    setCart([]);
+    navigate("/checkout");
   }
 
   function handleCartOpen() {
@@ -78,7 +85,9 @@ const Cart = () => {
           </div>
         )}
         <div className="btn--container">
-          <button className="btn btn--blue">Save and Checkout</button>
+          <div onClick={handleCheckOut} className="btn btn--blue">
+            Save and Checkout
+          </div>
           <button className="btn btn--red" onClick={handleCartOpen}>
             Cancel
           </button>

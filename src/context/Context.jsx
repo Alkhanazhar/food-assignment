@@ -6,9 +6,7 @@ export const CartContext = createContext();
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  useEffect(() => {
-    console.log("CartContext", cart);
-  }, []);
+  useEffect(() => {}, []);
   return (
     <CartContext.Provider value={{ cart, setCart, isCartOpen, setIsCartOpen }}>
       {children}
