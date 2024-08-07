@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #3e51b4;
+  box-shadow: 0rem 4px 10px rgba(0, 0, 0, 0.37);
+  color: white;
+}
+header div {
+  display: flex;
+  justify-content: center;
+}
+.logo--title {
+  font-weight: 700;
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: white;
+}
+.cart--icon {
+  color: white;
+  cursor: pointer;
+}
+.cart--header--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}

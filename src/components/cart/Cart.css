@@ -1,0 +1,40 @@
+.cart--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0000007e;
+}
+.cart--container--items {
+  margin: -10rem 0 0 0;
+  padding: 2rem;
+  border-radius: 0.4rem;
+  background: white;
+  position: relative;
+}
+.close--btn {
+  position: absolute;
+  right: 0.4rem;
+  top: 0.4rem;
+  border: none;
+  color: white;
+  padding: 0.4rem;
+  background: #000;
+  border-radius: 0.2rem;
+}
+.cart--item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+.cart--item--title{
+    font-size: 1.4rem;
+    font-weight: 500;
+}

@@ -1,0 +1,24 @@
+.hero {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 5rem;
+}
+.hero--btn {
+  background: #3e51b4;
+  box-shadow: 0rem 4px 10px rgba(0, 0, 0, 0.37);
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: white;
+  margin-top: 2.4rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
