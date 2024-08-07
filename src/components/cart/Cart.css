@@ -34,7 +34,10 @@
   align-items: center;
   margin-top: 1rem;
 }
-.cart--item--title{
-    font-size: 1.4rem;
-    font-weight: 500;
+.cart--item--title {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.cart--btn--container {
+  display: flex;
 }

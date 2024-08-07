@@ -34,6 +34,7 @@ const Cart = () => {
   }
 
   function handleCartOpen() {
+    setCart([]);
     setIsCartOpen(!isCartOpen);
   }
   useEffect(() => {
@@ -52,7 +53,7 @@ const Cart = () => {
                 <div key={cartItem.name} className="cart--item">
                   <div className="cart--item--title">{cartItem.name}</div>
                   <div className="cart--item--price">{cartItem.quantity}</div>
-                  <div className="btn--container">
+                  <div className="cart--btn--container">
                     <button
                       className="btn btn--blue"
                       onClick={() => addToCart(cartItem)}
