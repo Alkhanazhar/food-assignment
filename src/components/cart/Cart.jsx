@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../context/Context";
 import "./Cart.css";
 import { useNavigate } from "react-router-dom";
 const Cart = () => {
-  const { cart, setCart, isCartOpen, setIsCartOpen } = useContext(CartContext);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const { cart, setCart, isCartOpen, setIsCartOpen, price, setFinalPrice } =
+    useContext(CartContext);
   const navigate = useNavigate();
 
   function addToCart(item) {
@@ -36,6 +36,7 @@ const Cart = () => {
     });
   }
   function handleCheckOut() {
+    setFinalPrice(price);
     setCart([]);
     navigate("/checkout");
   }
@@ -44,10 +45,7 @@ const Cart = () => {
     setCart([]);
     setIsCartOpen(!isCartOpen);
   }
-  useEffect(() => {
-    const price = cart.reduce((sum, acc) => sum + acc.price * acc.quantity, 0);
-    setTotalPrice(price);
-  }, [cart]);
+
   return (
     <div className="cart--container">
       <div className="cart--container--items">
@@ -81,13 +79,13 @@ const Cart = () => {
         )}
         {cart.length > 0 && (
           <div className="cart--price--container">
-            <h2>Total Price</h2>₹{totalPrice.toFixed(2)}
+            <h2>Total Price</h2>₹{price.toFixed(2)}
           </div>
         )}
-        <div className="btn--container">
-          <div onClick={handleCheckOut} className="btn btn--blue">
+        <div className="cart--btn--container ">
+          <button onClick={handleCheckOut} className="btn btn--blue ">
             Save and Checkout
-          </div>
+          </button>
           <button className="btn btn--red" onClick={handleCartOpen}>
             Cancel
           </button>

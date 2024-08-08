@@ -45,6 +45,7 @@ h6 {
   justify-content: center;
   align-items: center;
   padding: 10rem;
+  min-width: 90%;
 }
 .checkout div {
   border: 1px solid #00000023;
